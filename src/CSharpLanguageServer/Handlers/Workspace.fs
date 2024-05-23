@@ -86,11 +86,11 @@ module Workspace =
             match Path.GetExtension(change.Uri) with
             | ".csproj" ->
                 do! context.WindowShowMessage "change to .csproj detected, will reload solution"
-                context.Emit(SolutionReloadRequest (TimeSpan.FromSeconds(5)))
+                context.Emit(SolutionReloadRequest (TimeSpan(0, 0, 5)))
 
             | ".sln" ->
                 do! context.WindowShowMessage "change to .sln detected, will reload solution"
-                context.Emit(SolutionReloadRequest (TimeSpan.FromSeconds(5)))
+                context.Emit(SolutionReloadRequest (TimeSpan(0, 0, 5)))
 
             | ".cs" ->
                 match change.Type with
